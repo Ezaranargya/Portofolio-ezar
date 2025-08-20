@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio Ezar Anargya Deanry</title>
+  <style>
+    /* Font & Global */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9fb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #ff512f, #dd2476, #6a11cb, #2575fc);
+      background-size: 300% 300%;
+      animation: gradientBG 10s ease infinite;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    @keyframes gradientBG {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid white;
+      margin-bottom: 20px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      max-width: 100%;
+    }
+
+    header img:hover {
+      transform: scale(1.1) rotate(3deg);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 600;
+    }
+
+    header p {
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      margin-top: 10px;
+      opacity: 0.95;
+    }
+
+    /* Navbar */
+    nav {
+      background: linear-gradient(90deg, #ff512f, #dd2476, #2575fc);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      margin: 0 12px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffea00;
+    }
+
+    /* Burger menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    /* Section */
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #ff512f, #dd2476, #6a11cb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    .about, .education, .projects, .achievements, .contact {
+      background: white;
+      margin-bottom: 25px;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about:hover, .education:hover, .projects:hover, 
+    .achievements:hover, .contact:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.25);
+    }
+
+    /* List Style */
+    .education ul, .achievements ul {
+      padding-left: 20px;
+    }
+
+    .education li, .achievements li {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .education li strong {
+      color: #6a11cb;
+    }
+
+    /* Project Cards */
+    .projects .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .projects .card {
+      border-radius: 14px;
+      padding: 20px;
+      color: #333;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .projects .card:nth-child(1) {
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    }
+    .projects .card:nth-child(2) {
+      background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
+    }
+    .projects .card:nth-child(3) {
+      background: linear-gradient(135deg, #f6d365, #fda085);
+    }
+
+    .projects .card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+    }
+
+    .projects h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .projects p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    /* Contact */
+    .contact a {
+      color: #2575fc;
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #222;
+        position: absolute;
+        top: 55px;
+        right: 20px;
+        border-radius: 8px;
+        padding: 10px;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <img src="ezar.jpg" alt="Foto Ezar" />
+    <h1>Ezar Anargya Deanry</h1>
+    <p>Junior Web Developer</p>
+  </header>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Portofolio</div>
+    <ul>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#education">Pendidikan</a></li>
+      <li><a href="#achievements">Prestasi</a></li>
+      <li><a href="#projects">Projek</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Tentang Saya -->
+  <section id="about" class="about">
+    <h2>Tentang Saya</h2>
+    <p>
+      Saya seorang siswa SMK Angkasa 1 Margahayu yang suka mencoba aplikasi/web sederhana namun bermanfaat.
+      Dan juga selalu punya rasa penasaran terhadap hal baru.
+    </p>
+  </section>
+
+  <!-- Pendidikan -->
+  <section id="education" class="education">
+    <h2>Pendidikan</h2>
+    <ul>
+      <li><strong>TK:</strong> TK Tarbiatul Muta'alimin (2013 - 2014)</li>
+      <li><strong>SD:</strong> SD Muhammadiyah 5 Bandung (2014 - 2020)</li>
+      <li><strong>SMP:</strong> MTS Nurul Iman Bandung (2020 - 2023)</li>
+      <li><strong>SMK:</strong> SMK Angkasa 1 Margahayu, Jurusan RPL (2023 - 2026)</li>
+      <li><strong>PKL:</strong> PT Jerbee (2025) <em>Waktu: 4 Bulan</em></li>
+    </ul>
+  </section>
+
+  <!-- Prestasi -->
+  <section id="achievements" class="achievements">
+    <h2>Prestasi</h2>
+    <ul>
+      <li>Juara 1 Lomba Adzan Masjid Baiturrohman (2020)</li>
+      <li>Juara 2 Lomba Tahfidz Masjid Baiturrohman (2018)</li>
+      <li>Juara 3 Lomba Basket Dynamix Club Invitation (2024)</li>
+    </ul>
+  </section>
+
+  <!-- Proyek -->
+  <section id="projects" class="projects">
+    <h2>Projek Saya</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>To-Do List</h3>
+        <p>Aplikasi To-Do List sederhana menggunakan HTML, CSS, dan JavaScript.</p>
+      </div>
+      <div class="card">
+        <h3>Portofolio</h3>
+        <p>Website portofolio pribadi dengan HTML & CSS.</p>
+      </div>
+      <div class="card">
+        <h3>CRUD Siswa</h3>
+        <p>Sistem CRUD data siswa menggunakan Python dan MySQL.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="contact" class="contact">
+    <h2>Kontak</h2>
+    <p>Email: <a href="mailto:ezaranargyadeanry@email.com">
+      ezaranargyadeanry@email.com
+    </a></p>
+    <p>GitHub: <a href="https://github.com/Ezaranargya">github.com/Ezaranargya</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Ezar Anargya Deanry</p>
+  </footer>
+</body>
+</html>
